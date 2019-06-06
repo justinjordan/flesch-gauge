@@ -1,6 +1,6 @@
 {
   "name": "flesch-gauge",
-  "description": "*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*",
+  "description": "Universal reactive component for displaying copy readability using the Flesch Reading Ease formula.",
   "author": "Justin Jordan <jsxule@gmail.com>",
   "license": "MIT",
   "version": "0.1.0",
