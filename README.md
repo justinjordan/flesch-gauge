@@ -1,68 +1,55 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Flesch Gauge
 
----
+Universal reactive component for displaying copy readability using the Flesch Reading Ease formula.
 
-# svelte app
+## Vanilla ES6+
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+```
+import FleschGauge from 'flesch-gauge'
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
+const fleschGauge = new FleschGauge({
+    target: document.querySelector('#flesch-gauge-container'),
+    props: {
+        content: "This is the content to be measured."
+    },
+})
 ```
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+## Vue
 
+```
+<template>
+    <div>
+        <FleschGauge :content="content">
+    </div>
+</template>
 
-## Get started
+<script>
+import FleschGauge from 'flesch-gauge/vue'
 
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
+export default {
+  name: 'app',
+  components: {
+    FleschGauge,
+  },
+  data() {
+      return {
+          content: "This is the content to be measured."
+      }
+  },
+}
+</script>
 ```
 
-...then start [Rollup](https://rollupjs.org):
+## React
 
-```bash
-npm run dev
 ```
+import React from 'react';
+import FleschGauge from 'flesch-gauge/react'
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+const content = "This is the content to be measured."
 
+const App = () => <FleschGauge content={content}/>
 
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-now
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
+export default App;
 ```
