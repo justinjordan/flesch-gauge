@@ -2,6 +2,7 @@ import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
+import json from 'rollup-plugin-json';
 import { terser } from 'rollup-plugin-terser';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -23,7 +24,13 @@ export default {
 			css: css => {
 				css.write('dist/bundle.css');
 			}
-		}),
+    }),
+
+    json({
+      include: 'node_modules/**',
+      preferConst: true,
+      compact: true,
+    }),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In

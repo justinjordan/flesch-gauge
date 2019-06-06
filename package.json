@@ -17,12 +17,13 @@
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "start": "sirv public",
-    "start:dev": "sirv public --dev"
+    "start": "sirv dist",
+    "start:dev": "sirv dist --dev"
   },
   "description": "*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*",
   "main": "dist/bundle.js",
   "dependencies": {
+    "flesch": "^1.0.4",
     "syllable": "^3.6.1"
   },
   "author": "Justin Jordan",

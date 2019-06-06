@@ -1,12 +1,9 @@
 <script>
-	import { Calculate } from './calculate.js'
+	import Calculate from './calculate.js'
 
-	export let content = ''
+    $: score = Calculate(content)
 
-	let score = Calculate(content)
+    export let content = ''
 </script>
-
-<style>
-</style>
 
 <p>Score: {score}</p>
