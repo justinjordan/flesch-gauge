@@ -1,8 +1,12 @@
 {
   "version": 3,
   "file": "bundle.css",
-  "sources": [],
-  "sourcesContent": [],
+  "sources": [
+    "../src/Ring.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  export let color = 'black'\n  export let radius = 52\n  export let percent = 100\n\n  let circumference = radius * 2 * Math.PI\n\n  let strokeDasharray = `${circumference} ${circumference}`\n  // $: strokeDashoffset = circumference - percent / 100 * circumference\n  let strokeDashoffset = circumference\n  $: {\n    // timeout to enable transition\n    setTimeout(() => {\n      strokeDashoffset = circumference - percent / 100 * circumference\n    }, 0)\n  }\n</script>\n\n<style>\n.progress-ring__circle {\n  transition: stroke-dashoffset 800ms ease-in-out;\n  transform: rotate(90deg);\n  transform-origin: center;\n}\n</style>\n\n<svg\n   class=\"progress-ring\"\n   width=\"120\"\n   height=\"120\">\n  <circle\n    class=\"progress-ring__circle\"\n    stroke={color}\n    stroke-width=\"4\"\n    stroke-dasharray={strokeDasharray}\n    stroke-dashoffset={strokeDashoffset}\n    fill=\"transparent\"\n    r={radius}\n    cx=\"60\"\n    cy=\"60\"/>\n</svg>"
+  ],
   "names": [],
-  "mappings": ""
+  "mappings": "AAmBA,sBAAsB,eAAC,CAAC,AACtB,UAAU,CAAE,iBAAiB,CAAC,KAAK,CAAC,WAAW,CAC/C,SAAS,CAAE,OAAO,KAAK,CAAC,CACxB,gBAAgB,CAAE,MAAM,AAC1B,CAAC"
 }
