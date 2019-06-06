@@ -6,8 +6,8 @@
   let circumference = radius * 2 * Math.PI
 
   let strokeDasharray = `${circumference} ${circumference}`
-  // $: strokeDashoffset = circumference - percent / 100 * circumference
   let strokeDashoffset = circumference
+
   $: {
     // timeout to enable transition
     setTimeout(() => {
@@ -31,7 +31,8 @@
   <circle
     class="progress-ring__circle"
     stroke={color}
-    stroke-width="4"
+    stroke-width="10"
+    stroke-linecap="round"
     stroke-dasharray={strokeDasharray}
     stroke-dashoffset={strokeDashoffset}
     fill="transparent"

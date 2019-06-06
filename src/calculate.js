@@ -12,9 +12,17 @@ function countSentences(content) {
 }
 
 function Calculate(content) {
-  const score = flesch({sentence: countSentences(content), word: countWords(content), syllable: syllable(content)})
+  const words = countWords(content)
+  const sentences = countSentences(content)
+  const syllables = syllable(content)
 
-  return score < 0 ? 0 : score > 100 ? 100 : score
+  const score = flesch({
+    word: words,
+    sentence: sentences,
+    syllable: syllables,
+  })
+
+  return (score < 0 ? 0 : score > 100 ? 100 : score).toFixed(1)
 }
 
 export default Calculate
