@@ -7,10 +7,11 @@
   <title>FleschGauge Example</title>
 </head>
 <body>
-  <p id="content">Our Automatic Readability Checker takes a sample of your writing and calculates the number of sentences, words, syllables, and characters in your sample. Our program takes the output of these numbers and plugs them into seven popular readability formulas. These readability formulas (see below) will let you know the reading level and grade level of your text and help you determine if your audience can read your writing. Our Automatic Readability Checker takes a sample of your writing and calculates the number of sentences, words, syllables, and characters in your sample. Our program takes the output of these numbers and plugs them into seven popular readability formulas. These readability formulas (see below) will let you know the reading level and grade level of your text and help you determine if your audience can read your writing.</p>
+  <p id="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar dui in volutpat sollicitudin. Duis efficitur posuere sem. Curabitur justo justo, ultricies eu accumsan a, fermentum ut ligula. Proin vitae malesuada magna. Aenean felis sem, vulputate ut venenatis vitae, convallis et mauris. Proin rhoncus ultrices enim cursus accumsan. Sed accumsan dui quis facilisis suscipit. Pellentesque consequat justo ut lectus blandit fermentum. Maecenas a ipsum at augue volutpat ultrices nec ac sem. Sed finibus blandit ligula id tempus. Maecenas ac sollicitudin eros. Nam a massa vestibulum, dapibus nunc sit amet, feugiat leo. Nam feugiat pharetra enim, nec suscipit augue posuere sit amet. Proin lacinia nisi ut turpis porttitor commodo. Phasellus elementum, tortor commodo ultrices egestas, metus enim dignissim felis, ut tempus lacus leo sit amet elit.</p>
   <div id="flesch-gauge"></div>
-  <script src="bundle.js"></script>
-  <script>
+  <script type="module">
+    import FleschGauge from './bundle.js'
+
     var app = new FleschGauge({
       target: document.querySelector('#flesch-gauge'),
       props: {

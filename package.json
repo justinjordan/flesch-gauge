@@ -1,6 +1,10 @@
 {
   "name": "flesch-gauge",
+  "description": "*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*",
+  "author": "Justin Jordan <jsxule@gmail.com>",
+  "license": "MIT",
   "version": "0.1.0",
+  "main": "dist/bundle.js",
   "devDependencies": {
     "npm-run-all": "^4.1.5",
     "rollup": "^1.10.1",
@@ -20,12 +24,8 @@
     "start": "sirv dist",
     "start:dev": "sirv dist --dev"
   },
-  "description": "*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*",
-  "main": "dist/bundle.js",
   "dependencies": {
     "flesch": "^1.0.4",
     "syllable": "^3.6.1"
-  },
-  "author": "Justin Jordan",
-  "license": "MIT"
+  }
 }
