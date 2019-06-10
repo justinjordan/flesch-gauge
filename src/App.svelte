@@ -9,7 +9,10 @@
     let rating = ''
     $: score = Calculate(content)
     $: {
-        if (score < 30) {
+        if (isNaN(score)) {
+            score = 0
+            rating = 'Waiting...'
+        } else if (score < 30) {
             rating = 'Very Difficult'
         } else if (score >= 30 && score < 50) {
             rating = 'Difficult'

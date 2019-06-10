@@ -12,8 +12,8 @@ function countSentences(content) {
 }
 
 function Calculate(content) {
-  const words = countWords(content)
   const sentences = countSentences(content)
+  const words = countWords(content)
   const syllables = syllable(content)
 
   const score = flesch({
