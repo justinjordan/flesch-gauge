@@ -1,5 +1,4 @@
 <script>
-  export let color = 'black'
   export let radius = 52
   export let percent = 100
 
@@ -7,10 +6,12 @@
 
   let strokeDasharray = `${circumference} ${circumference}`
   let strokeDashoffset = circumference
+  let color = 'hwb(0, 0%, 0%)'
 
   $: {
     // timeout to enable transition
     setTimeout(() => {
+      color = 'hwb(' + Math.floor(120 * percent / 100) + ', 0%, 0%)'
       strokeDashoffset = circumference - percent / 100 * circumference
     }, 0)
   }

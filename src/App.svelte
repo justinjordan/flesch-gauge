@@ -57,7 +57,6 @@
 
 <div class="flesch-gauge__inner-wrap">
     <Ring
-        color={color}
         percent={score}
     />
     <div class="flesch-gauge__copy">
